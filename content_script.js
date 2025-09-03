@@ -170,8 +170,7 @@ const init = () => {
     recognition.interimResults = true;
 
     let finalTranscript = '';
-    const punctuationCommands = { 'punto': '.', 'coma': ',', 'punto y coma': ';', 'dos puntos': ':', 'punto aparte': '
-' };
+    const punctuationCommands = { 'punto': '.', 'coma': ',', 'punto y coma': ';', 'dos puntos': ':', 'punto aparte': '' };
 
     const saveToHistory = (text) => {
         if (!text.trim()) return;

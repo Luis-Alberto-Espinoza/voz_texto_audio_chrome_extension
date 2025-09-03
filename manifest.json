@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Voz a Texto Plus",
+  "version": "1.0",
+  "description": "Una extensión de Chrome para convertir voz a texto y texto a voz.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "leer_texto_seleccionado": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Lee en voz alta el texto seleccionado"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+}
